@@ -16,6 +16,11 @@ class App extends Component {
     this.setState({history: this.state.history.concat(`${display} = ${result}`), display: result})
   }
 
+  addToDisplay (char) {
+    this.setState({ display: this.state.display + char
+    })
+  }
+
   render () {
     return (
       <div className='App'>
@@ -28,8 +33,7 @@ class App extends Component {
             display: ''})}>C</div>
         </div>
         <div className='columns'>
-          <div className='column is-one-fifth' onClick={() => this.setState({
-            display: this.state.display + '7'})}>7</div>
+          <div className='column is-one-fifth' onClick={() => this.addToDisplay('7')}>7</div>
           <div className='column is-one-fifth' onClick={() => this.setState({
             display: this.state.display + '8'})}>8</div>
           <div className='column is-one-fifth' onClick={() => this.setState({
@@ -61,10 +65,10 @@ class App extends Component {
           <div className='column is-one-fifth' onClick={() => this.setState({
             display: this.state.display + '0'})}>0</div>
           <div className='column is-one-fifth' onClick={() => this.setState({
-            display: '.'})}>.</div>
+            display: this.state.display + '.'})}>.</div>
           <div className='column is-one-fifth' onClick={() => this.equals()}>=</div>
           <div className='column is-one-fifth' onClick={() => this.setState({
-            display: '+'})}>+</div>
+            display: this.state.display + '+'})}>+</div>
         </div>
         <div id='history'>{this.state.history.map((h, idx) => <div key={idx}>{h}</div>)}</div>
       </div>
