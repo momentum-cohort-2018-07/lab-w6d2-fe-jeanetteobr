@@ -16,6 +16,7 @@ Before you build out any code, take time to plan your calculator. You should thi
 
 - Create buttons that display value in display div when clicked
 - Evaluate the expression in the display div
-- Take the data from the display div, set as a string and push to an array
+- Take the data from the display div, set as a string and push to an     array
 - Take display div array and render in history div
+- Add styles to render calculator interface
 
